@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HRM</title>
+  <meta name="description" content="Angular Bootstrap Dashboard"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+    <link href="plugins/angular-material/angular-material.min.css" rel="stylesheet" />
+    <!--CSS-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/nga.all.min.css" rel="stylesheet" />
+    <link href="css/themes.css" rel="stylesheet" />
+ 
+    
+   
+    <h3 align="center" style="color:green"><u><b>General Info</b></u></h3>
+</head>
+<body >
+
+
+<div ng-app="app" ng-controller="HomeController">
+<div class="container">
+<p><br></p>
+<div class="row">
+	<div class="col-sm-2">
+		<label>First Name:<span style="color:red">*</span>&nbsp;<span style="color:blue">?</span></label>
+	</div> 
+	<div class="col-sm-3">
+		<input type="text" ng-model="fname" class="form-control">
+	</div>
+	
+	<div class="col-sm-2">
+		<label>Middle Name:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+	 <div class="col-sm-3">
+ 		<input type="text" ng-model="mname" class="form-control">
+ 	</div>
+	</div><br>
+
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Last Name: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="lname" class="form-control">
+ 	</div>
+ 	
+ 	<div class="col-sm-2">
+		<label>Immigration Status: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="immigrationName">
+		<option ng-repeat="img in immigration">{{img}}</option>
+		
+		</select>
+ 	</div>
+ </div> <br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Department: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="deptName" ng-options="dept for dept in department">
+		</select>
+	</div>
+	
+	<div class="col-sm-2">
+		<label>Employee Type:<span style="color:red">*</span> &nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 		<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="empType" ng-options="emp for emp in employeeType">
+		</select>
+ 		</div>
+ </div><br>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Joining Date:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="joiningDate" class="form-control">
+ 	</div>
+ 	
+ 	<div class="col-sm-2">
+		<label>Reports To: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="form-group col-sm-3">
+	<select class="form-control" ng-model="reportsto" ng-options="report for report in reportsTo">
+	</select>
+	 </div>	
+ </div><br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Email:<span style="color:red">*</span>&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="email" class="form-control">
+ 	</div>
+ 	
+ 	<div class="col-sm-2">
+		<label>Ext: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="ext" class="form-control">
+ 	</div>
+ </div><br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Home Phone: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="phone" class="form-control">
+ 	</div>
+ 	
+ 	<div class="col-sm-2">
+		<label>Adrress Line1:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="address1" class="form-control">
+ 	</div>
+</div><br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Address Line2: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="address2" class="form-control">
+	 </div>
+	 
+	<div class="col-sm-2">
+		<label>Country:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="countryList" ng-options="country for country in country">
+		</select>
+ 	</div>
+</div><br/>
+
+<div class="row">
+	<div class="col-sm-2">
+		<label>Zip/Pin:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="zip" class="form-control">
+ 	</div>
+ 	
+ 	<div class="col-sm-2">
+		<label>Sub-Vendor:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="form-group col-sm-3">
+	<select class="form-control" ng-model="subVendor" ng-options="vendor for vendor in vendor">
+	</select>
+ 	</div>
+</div><br/>
+ 
+   
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>I-9 Form: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="i9" class="form-control">
+ 	</div>
+ 	<div class="col-sm-2">
+		<label>I-9 Form Expiry Date: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="i9Expiry" class="form-control">
+ 	</div>
+</div><br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Termination Date:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="terminationDate" class="form-control">
+ 	</div>
+ 	<div class="col-sm-2">
+		<label>Reson for Termination:&nbsp;<span style="color:blue">?</span></label>
+	</div>
+	 <div class="form-group col-sm-3">
+		<select class="form-control" ng-model="terminationReason" ng-options="reason for reason in reason">
+		</select>
+	 </div>
+ </div><br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Reference Number: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="refNo" class="form-control">
+ 	</div>
+ 	
+ 	<div class="col-sm-2">
+		<label>Division:<span style="color:red">*</span>&nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="divisions" ng-options="division for division in division">
+		</select>
+ 	</div>
+</div><br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Marital Status:&nbsp;<span style="color:blue">?</span></label>
+	</div>
+	 <div class="form-group col-sm-3">
+		<select class="form-control" ng-model="maritalState" ng-options="maritalStatus for maritalStatus in maritalStatus">
+		</select>
+ 	</div>
+ 	
+ 	<div class="col-sm-2">
+		<label>Social Security Number:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="socialNo" class="form-control">
+ 	</div>
+</div><br>
+ 
+<div class="row">
+	<div class="col-sm-2">
+		<label>Gender:<span style="color:red">*</span>&nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="gend" ng-options="gender for gender in gender">
+		</select>
+ 	</div>
+ 	<div class="col-sm-2">
+		<label>Job Title:&nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="jobtitle" ng-options="jobTitle for jobTitle in jobTitle">
+		</select>
+ 	</div>
+ </div><br>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>Date Of Birth:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="dob" class="form-control">
+ 	</div>
+ 	<div class="col-sm-2">
+		<label>Work Phone:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="workPhone" class="form-control">
+ 	</div>
+ </div><br/>
+ 
+<div class="row">
+	<div class="col-sm-2">
+		<label>cell Phone:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="text" ng-model="cellPhone" class="form-control">
+ 	</div>
+ 	<div class="col-sm-2">
+		<label>City:&nbsp;<span style="color:blue">?</span> </label>
+	</div>
+	 <div class="col-sm-3">
+ 		<input type="text" ng-model="city" class="form-control">
+ 	</div>
+ </div><br/>
+ 
+ <div class="row">
+	<div class="col-sm-2">
+		<label>State:&nbsp;<span style="color:blue">?</span></label>
+	</div>
+	<div class="form-group col-sm-3">
+		<select class="form-control" ng-model="states" ng-options="state for state in state">
+		</select>
+	 </div>
+	 
+	 <div class="col-sm-2">
+		<label>I-9 will not expire: &nbsp;<span style="color:blue">?</span></label>
+	</div>
+ 	<div class="col-sm-3">
+ 		<input type="checkbox" ng-model="isExpire" >
+ 	</div>
+ </div><br>
+ 
+ 
+</div>
+
+</div>
+
+
+
+    <!--Scripts-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-ui-router-min.js"></script>
+    <script src="js/angular-resource.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <!--Common-->
+
+  
+
+    <!--main app-->
+   
+
+    
+
+    
+        <!-- Controllers -->
+        <!-- <script src="modules/mainModule.js"></script> -->
+        <script src="controllers/HomeController.js"></script>
+   
+        
+    <div flash-message="5000"></div>
+    <ui-view></ui-view>
+    
+</body>
+</html>
