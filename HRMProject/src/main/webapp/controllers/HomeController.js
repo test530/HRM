@@ -1,5 +1,8 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngMaterial', 'ngMessages']);
 app.controller('HomeController', function($scope) {
+	
+	  
+	 
 	$scope.immigration =["------none------","Hi Visa", "B1 Visa", "CPT","EAD","F1","GC","GC EAD"];
 	$scope.immigrationName = $scope.immigration[0];
 	$scope.department =["------none------","IT", "Recruiting", "Sales","HR","Accounting","Finance","Sales/Recruiting","Other","Bench Sales","Exec. Management"];
@@ -24,24 +27,9 @@ app.controller('HomeController', function($scope) {
 	$scope.jobtitle = $scope.jobTitle[0];
 	$scope.state=["------none------","Alabama","Alaska","Arizona","-----------"];
 	$scope.states = $scope.state[0];
-	
-	
-	
-	
 
 
-
-	
-	
-
-	
-	
-
-
-	
-
-
-	
+
 
 
 });

@@ -2,18 +2,20 @@
 <html>
 <head>
   <title>HRM</title>
-  <meta name="description" content="Angular Bootstrap Dashboard"/>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
-    <link href="plugins/angular-material/angular-material.min.css" rel="stylesheet" />
+ 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.css" rel="stylesheet" />
     <!--CSS-->
     <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/site.css" rel="stylesheet" />
+    <!-- <link href="css/site.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/nga.all.min.css" rel="stylesheet" />
-    <link href="css/themes.css" rel="stylesheet" />
+    <link href="css/themes.css" rel="stylesheet" /> -->
  
-    
+    <style type="text/css">
+    .btn1 {
+ color:'green';
+}
+    </style>
    
     <h3 align="center" style="color:green"><u><b>General Info</b></u></h3>
 </head>
@@ -21,7 +23,7 @@
 
 
 <div ng-app="app" ng-controller="HomeController">
-<div class="container">
+<div class="container" ng-style="{'background-color':'#DCDCDC'}">
 <p><br></p>
 <div class="row">
 	<div class="col-sm-2">
@@ -81,7 +83,9 @@
 		<label>Joining Date:&nbsp;<span style="color:blue">?</span> </label>
 	</div>
  	<div class="col-sm-3">
- 		<input type="text" ng-model="joiningDate" class="form-control">
+ 		 <md-datepicker 
+               ng-model = "joinDate" 
+               md-placeholder = "Enter date"></md-datepicker>
  	</div>
  	
  	<div class="col-sm-2">
@@ -172,7 +176,9 @@
 		<label>I-9 Form Expiry Date: &nbsp;<span style="color:blue">?</span></label>
 	</div>
  	<div class="col-sm-3">
- 		<input type="text" ng-model="i9Expiry" class="form-control">
+ 		<md-datepicker 
+               ng-model = "i9Expiry" 
+               md-placeholder = "Enter date"></md-datepicker>
  	</div>
 </div><br/>
  
@@ -181,7 +187,9 @@
 		<label>Termination Date:&nbsp;<span style="color:blue">?</span> </label>
 	</div>
  	<div class="col-sm-3">
- 		<input type="text" ng-model="terminationDate" class="form-control">
+ 		<md-datepicker 
+               ng-model = "terminationDate" 
+               md-placeholder = "Enter date"></md-datepicker>
  	</div>
  	<div class="col-sm-2">
 		<label>Reson for Termination:&nbsp;<span style="color:blue">?</span></label>
@@ -248,7 +256,11 @@
 		<label>Date Of Birth:&nbsp;<span style="color:blue">?</span> </label>
 	</div>
  	<div class="col-sm-3">
- 		<input type="text" ng-model="dob" class="form-control">
+ 	
+            <md-datepicker 
+               ng-model = "myDate" 
+               md-placeholder = "Enter date"></md-datepicker>
+               
  	</div>
  	<div class="col-sm-2">
 		<label>Work Phone:&nbsp;<span style="color:blue">?</span> </label>
@@ -289,7 +301,13 @@
  		<input type="checkbox" ng-model="isExpire" >
  	</div>
  </div><br>
- 
+ <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button class="md-raised">Save</md-button>
+      <md-button class="md-raised md-primary">Save&New</md-button>
+      <md-button  class="md-raised md-primary">Save&Close</md-button>
+      <md-button class="md-raised md-warn">Close</md-button>
+     
+    </section>
  
 </div>
 
@@ -300,32 +318,19 @@
     <!--Scripts-->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
-
-
     <script src="js/angular.min.js"></script>
-    <script src="js/angular-animate.min.js"></script>
     <script src="js/angular-ui-router-min.js"></script>
     <script src="js/angular-resource.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.js"></script>
+   <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
-    <!--Common-->
 
-  
-
-    <!--main app-->
-   
-
-    
-
-    
-        <!-- Controllers -->
-        <!-- <script src="modules/mainModule.js"></script> -->
         <script src="controllers/HomeController.js"></script>
    
         
-    <div flash-message="5000"></div>
+
     <ui-view></ui-view>
     
 </body>
