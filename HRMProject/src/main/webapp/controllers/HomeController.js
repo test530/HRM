@@ -1,8 +1,24 @@
-var app = angular.module('app', ['ngMaterial', 'ngMessages']);
-app.controller('HomeController', function($scope) {
-	
-	  
-	 
+
+mainModule.controller('HomeController',['$scope','$state','$rootScope',
+		function($scope,$state,$rootScope) {
+    $rootScope.redirect = function() {
+        
+      $state.go('home');
+    };
+             $rootScope.dashboard = function() {
+        
+      $state.go('dashboard');
+    };
+            $rootScope.timesheet = function() {
+        
+      $state.go('timeSheet');
+    };
+            $rootScope.logout = function() {
+      $state.go('login');
+    };
+            
+            
+   
 	$scope.immigration =["------none------","Hi Visa", "B1 Visa", "CPT","EAD","F1","GC","GC EAD"];
 	$scope.immigrationName = $scope.immigration[0];
 	$scope.department =["------none------","IT", "Recruiting", "Sales","HR","Accounting","Finance","Sales/Recruiting","Other","Bench Sales","Exec. Management"];
@@ -29,7 +45,7 @@ app.controller('HomeController', function($scope) {
 	$scope.states = $scope.state[0];
 
 
-
 
 
-});
+
+}]);
